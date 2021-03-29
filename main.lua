@@ -4,11 +4,13 @@ love.window.setMode(800,600,{borderless = true})
 
 math.randomseed(os.time())
 
-img = love.graphics.newImage("input/input_10.png")
+imgdata = love.image.newImageData("input/input_10.png")
+
+img = love.graphics.newImage(imgdata)
 
 local ow, oh = 100,100
 
-iga:geninit(img, ow,ow, img:getWidth(), img:getHeight(), 3)
+iga:geninit(imgdata, ow,ow, img:getWidth(), img:getHeight(), 3)
 
 love.draw = function()
 	love.graphics.scale(8,8)
